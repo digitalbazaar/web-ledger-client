@@ -1,0 +1,81 @@
+{
+  "name": "web-ledger-client",
+  "version": "0.0.1",
+  "description": "A WebLedger client.",
+  "homepage": "http://github.com/digitalbazaar/web-ledger-client",
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "http://digitalbazaar.com/"
+  },
+  "contributors": [
+    {
+      "name": "Dave Longley",
+      "email": "dlongley@digitalbazaar.com"
+    },
+    {
+      "name": "Manu Sporny",
+      "email": "msporny@digitalbazaar.com"
+    },
+    {
+      "name": "David I. Lehn",
+      "email": "dlehn@digitalbazaar.com"
+    },
+    {
+      "name": "Dmitri Zagidulin",
+      "email": "dmitriz@digitalbazaar.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/digitalbazaar/web-ledger-client"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/web-ledger-client/issues",
+    "email": "support@digitalbazaar.com"
+  },
+  "license": "BSD-3-Clause",
+  "main": "lib/index.js",
+  "dependencies": {
+    "http-signature": "^1.2.0",
+    "jsonld": "^1.1.0",
+    "jsonld-signatures": "^2.3.1",
+    "r2": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "dirty-chai": "^2.0.1",
+    "mocha": "^5.0.5",
+    "nock": "^10.0.0",
+    "nyc": "^13.0.1",
+    "sinon": "^6.0.1",
+    "sinon-chai": "^3.0.0"
+  },
+  "nyc": {
+    "reporter": [
+      "html",
+      "text-summary"
+    ]
+  },
+  "engines": {
+    "node": "^8.3.0"
+  },
+  "keywords": [
+    "Decentralized",
+    "DID",
+    "WebLedger",
+    "Ledger"
+  ],
+  "scripts": {
+    "mocha": "nyc mocha ./tests/**/*.spec.js ./tests/*.spec.js",
+    "test": "npm run mocha",
+    "preversion": "npm test",
+    "postversion": "git push --follow-tags"
+  },
+  "eslintConfig": {
+    "env": {
+      "mocha": true,
+      "node": true
+    }
+  }
+}
