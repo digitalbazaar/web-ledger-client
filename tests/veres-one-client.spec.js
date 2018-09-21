@@ -17,7 +17,7 @@ const TEST_DID_RESULT = require('./dids/genesis.testnet.did.json');
 const LEDGER_AGENTS_DOC = require('./dids/ledger-agents.json');
 const ACCELERATOR_RESPONSE = require('./dids/accelerator-response.json');
 
-describe('did methods', () => {
+describe('web ledger client', () => {
   let client;
 
   beforeEach(() => {
