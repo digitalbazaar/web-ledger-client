@@ -102,7 +102,7 @@ describe('web ledger client', () => {
           hostname: TEST_HOSTNAME
         });
 
-        const body = await result.json();
+        const body = result.data;
 
         expect(body).to.have.property('proof');
       });
