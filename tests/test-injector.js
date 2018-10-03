@@ -1,6 +1,6 @@
 'use strict';
 
-const contexts = require('../lib/contexts')
+const contexts = require('../lib/contexts');
 const Injector = require('../lib/Injector');
 const injector = new Injector();
 
