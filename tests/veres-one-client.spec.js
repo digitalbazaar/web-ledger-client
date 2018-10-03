@@ -33,7 +33,7 @@ describe('web ledger client', () => {
           .get(`/ledger-agents`)
           .reply(200, LEDGER_AGENTS_DOC);
 
-        const agent = await client.getAgent({mode: 'test'});
+        const agent = await client.getAgent();
         expect(agent.id.startsWith('urn:uuid:')).to.be.true();
         const {ledgerConfigService} = agent.service;
         expect(ledgerConfigService.endsWith('/config')).to.be.true();
@@ -102,7 +102,7 @@ describe('web ledger client', () => {
           hostname: TEST_HOSTNAME
         });
 
-        const body = await result.json();
+        const body = result.data;
 
         expect(body).to.have.property('proof');
       });
