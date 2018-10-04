@@ -41,7 +41,7 @@
     "http-signature": "^1.2.0",
     "jsonld": "^1.1.0",
     "jsonld-signatures": "^2.3.1",
-    "veres-one-context": "^3.0.0"
+    "veres-one-context": "digitalbazaar/veres-one-context#elector-pool-support"
   },
   "devDependencies": {
     "chai": "^4.1.2",
