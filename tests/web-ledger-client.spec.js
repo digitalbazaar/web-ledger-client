@@ -8,7 +8,7 @@ const {expect} = chai;
 const tls = require('tls');
 tls.DEFAULT_ECDH_CURVE = 'auto';
 
-const webLedgerClient = require('../lib/index').client;
+const WebLedgerClient = require('../lib/index');
 const injector = require('./test-injector');
 
 const TEST_HOSTNAME = 'genesis.testnet.veres.one';
@@ -20,7 +20,7 @@ describe('web ledger client', () => {
   let client;
 
   beforeEach(() => {
-    client = new webLedgerClient({
+    client = new WebLedgerClient({
       injector, mode: 'test', hostname: TEST_HOSTNAME
     });
   });
