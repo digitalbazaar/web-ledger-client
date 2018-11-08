@@ -1,5 +1,6 @@
 # Web Ledger Client _(web-ledger-client)_
 
+[![NPM Version](https://img.shields.io/npm/v/web-ledger-client.svg?style=flat-square)](https://npm.im/web-ledger-client)
 [![Build Status](https://travis-ci.org/digitalbazaar/web-ledger-client.png?branch=master)](https://travis-ci.org/digitalbazaar/web-ledger-client)
 
 > A [DID](https://w3c-ccg.github.io/did-spec/) (Decentralized Identifier) resolution library for Javascript
