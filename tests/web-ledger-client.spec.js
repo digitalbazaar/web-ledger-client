@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2018-2019 Digital Bazaar, Inc. All rights reserved.
+ */
+'use strict';
+
 const nock = require('nock');
 const chai = require('chai');
 chai.should();
