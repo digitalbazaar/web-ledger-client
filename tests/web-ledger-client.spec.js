@@ -1,6 +1,5 @@
 const nock = require('nock');
 const chai = require('chai');
-chai.use(require('dirty-chai'));
 chai.should();
 
 const {expect} = chai;
@@ -8,7 +7,7 @@ const {expect} = chai;
 const tls = require('tls');
 tls.DEFAULT_ECDH_CURVE = 'auto';
 
-const WebLedgerClient = require('../lib/index');
+const WebLedgerClient = require('..');
 
 const TEST_HOSTNAME = 'genesis.testnet.veres.one';
 const TEST_DID = 'did:v1:test:nym:2pfPix2tcwa7gNoMRxdcHbEyFGqaVBPNntCsDZexVeHX';
@@ -30,9 +29,9 @@ describe('web ledger client', () => {
           .reply(200, LEDGER_AGENTS_DOC);
 
         const agent = await client.getAgent({mode: 'test'});
-        expect(agent.id.startsWith('urn:uuid:')).to.be.true();
+        expect(agent.id.startsWith('urn:uuid:')).to.be.true;
         const {ledgerConfigService} = agent.service;
-        expect(ledgerConfigService.endsWith('/config')).to.be.true();
+        expect(ledgerConfigService.endsWith('/config')).to.be.true;
       });
     });
 
