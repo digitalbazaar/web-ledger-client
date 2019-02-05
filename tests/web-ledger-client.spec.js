@@ -9,9 +9,6 @@ chai.should();
 
 const {expect} = chai;
 
-const tls = require('tls');
-tls.DEFAULT_ECDH_CURVE = 'auto';
-
 const WebLedgerClient = require('..');
 
 const TEST_HOSTNAME = 'genesis.testnet.veres.one';
