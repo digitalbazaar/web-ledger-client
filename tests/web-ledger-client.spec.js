@@ -145,7 +145,7 @@ describe('web ledger client', () => {
           .post('/')
           .reply(201);
         const record = {id: 'https://example.com/foo'};
-        const operation = WebLedgerClient.wrap({record});
+        const operation = await client.wrap({record});
         let error;
         let result;
         try {
@@ -166,7 +166,7 @@ describe('web ledger client', () => {
           .post('/')
           .reply(404);
         const record = {id: 'https://example.com/foo'};
-        const operation = WebLedgerClient.wrap({record});
+        const operation = await client.wrap({record});
         let error;
         let result;
         try {
@@ -190,7 +190,7 @@ describe('web ledger client', () => {
           .post('/')
           .reply(400, reply);
         const record = {id: 'https://example.com/foo'};
-        const operation = WebLedgerClient.wrap({record});
+        const operation = await client.wrap({record});
         let error;
         let result;
         try {
@@ -207,25 +207,30 @@ describe('web ledger client', () => {
     }); // end sendOperation
 
     describe('wrap', () => {
+      beforeEach(() => {
+        nock('https://genesis.testnet.veres.one')
+          .get(`/ledger-agents`)
+          .reply(200, LEDGER_AGENTS_DOC);
+      });
       const record = {id: 'https://example.com/foo'};
-      it('wraps a record into a create operation by default', () => {
-        const result = WebLedgerClient.wrap({record});
+      it('wraps a record into a create operation by default', async () => {
+        const result = await client.wrap({record});
         expect(result).to.exist;
         result.should.be.an('object');
         result['@context'].should.equal(constants.WEB_LEDGER_CONTEXT_V1_URL);
         result.record.should.eql(record);
         result.type.should.equal('CreateWebLedgerRecord');
       });
-      it('wraps a record into a create operation explicitly', () => {
-        const result = WebLedgerClient.wrap({record, operationType: 'create'});
+      it('wraps a record into a create operation explicitly', async () => {
+        const result = await client.wrap({record, operationType: 'create'});
         expect(result).to.exist;
         result.should.be.an('object');
         result['@context'].should.equal(constants.WEB_LEDGER_CONTEXT_V1_URL);
         result.record.should.eql(record);
         result.type.should.equal('CreateWebLedgerRecord');
       });
-      it('wraps a record into an update operation', () => {
-        const result = WebLedgerClient.wrap({record, operationType: 'update'});
+      it('wraps a record into an update operation', async () => {
+        const result = await client.wrap({record, operationType: 'update'});
         expect(result).to.exist;
         result.should.be.an('object');
         result['@context'].should.equal(constants.WEB_LEDGER_CONTEXT_V1_URL);
@@ -233,11 +238,11 @@ describe('web ledger client', () => {
         result.recordPatch.should.eql(record);
         result.type.should.equal('UpdateWebLedgerRecord');
       });
-      it('throws on invalid operationType', () => {
+      it('throws on invalid operationType', async () => {
         let error;
         let result;
         try {
-          result = result = WebLedgerClient.wrap(
+          result = result = await client.wrap(
             {record, operationType: 'foo'});
         } catch(e) {
           error = e;
