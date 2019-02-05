@@ -51,7 +51,7 @@ describe('web ledger client', () => {
                '/query/?id=' + encodeURIComponent(TEST_DID))
           .reply(200, TEST_DID_RESULT);
 
-        const result = await client.get({id: TEST_DID});
+        const result = await client.getRecord({id: TEST_DID});
         expect(result.record.id).to.equal(TEST_DID);
         expect(result.meta.sequence).to.equal(0);
       });
@@ -68,7 +68,7 @@ describe('web ledger client', () => {
         let error;
         let result;
         try {
-          result = await client.get({id: TEST_DID});
+          result = await client.getRecord({id: TEST_DID});
         } catch(e) {
           error = e;
         }
