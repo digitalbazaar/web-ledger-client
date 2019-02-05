@@ -55,6 +55,27 @@ describe('web ledger client', () => {
         expect(result.record.id).to.equal(TEST_DID);
         expect(result.meta.sequence).to.equal(0);
       });
+      it('returns NotFoundError on missing did doc', async () => {
+        nock('https://genesis.testnet.veres.one')
+          .get(`/ledger-agents`)
+          .reply(200, LEDGER_AGENTS_DOC);
+
+        nock('https://genesis.testnet.veres.one')
+          .post('/ledger-agents/72fdcd6a-5861-4307-ba3d-cbb72509533c' +
+               '/query/?id=' + encodeURIComponent(TEST_DID))
+          .reply(404);
+
+        let error;
+        let result;
+        try {
+          result = await client.get({id: TEST_DID});
+        } catch(e) {
+          error = e;
+        }
+        expect(result).not.to.exist;
+        expect(error).to.exist;
+        error.name.should.equal('NotFoundError');
+      });
     });
   });
 });
