@@ -38,8 +38,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "apisauce": "^1.0.2",
-    "axios": "^0.18.0",
-    "http-signature": "^1.2.0"
+    "axios": "^0.18.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
