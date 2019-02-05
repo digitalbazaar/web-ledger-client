@@ -48,7 +48,7 @@ describe('web ledger client', () => {
 
         nock('https://genesis.testnet.veres.one')
           .post('/ledger-agents/72fdcd6a-5861-4307-ba3d-cbb72509533c' +
-               '/query?id=' + TEST_DID)
+               '/query/?id=' + encodeURIComponent(TEST_DID))
           .reply(200, TEST_DID_RESULT);
 
         const result = await client.get({id: TEST_DID});
