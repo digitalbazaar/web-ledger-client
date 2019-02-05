@@ -12,8 +12,8 @@ const {expect} = chai;
 const {constants, WebLedgerClient} = require('..');
 
 const TEST_HOSTNAME = 'genesis.testnet.veres.one';
-const TEST_DID = 'did:v1:test:nym:2pfPix2tcwa7gNoMRxdcHbEyFGqaVBPNntCsDZexVeHX';
 const TEST_DID_RESULT = require('./dids/genesis.testnet.did.json');
+const TEST_DID = TEST_DID_RESULT.record.id;
 const LEDGER_AGENTS_DOC = require('./dids/ledger-agents.json');
 
 describe('web ledger client', () => {
