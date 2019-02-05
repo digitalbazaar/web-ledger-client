@@ -70,11 +70,5 @@
     "test": "npm run mocha",
     "preversion": "npm test",
     "postversion": "git push --follow-tags"
-  },
-  "eslintConfig": {
-    "env": {
-      "mocha": true,
-      "node": true
-    }
   }
 }
