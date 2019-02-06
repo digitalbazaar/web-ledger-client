@@ -15,6 +15,7 @@ const TEST_HOSTNAME = 'genesis.testnet.veres.one';
 const TEST_DID_RESULT = require('./dids/genesis.testnet.did.json');
 const TEST_DID = TEST_DID_RESULT.record.id;
 const LEDGER_AGENTS_DOC = require('./dids/ledger-agents.json');
+const LEDGER_AGENT_STATUS = require('./dids/ledger-agent-status.json');
 
 describe('web ledger client', () => {
   let client;
@@ -29,6 +30,8 @@ describe('web ledger client', () => {
         nock('https://genesis.testnet.veres.one')
           .get(`/ledger-agents`)
           .reply(200, LEDGER_AGENTS_DOC);
+
+        _nockLedgerAgentStatus();
 
         const agent = await client.getAgent();
         expect(agent.id.startsWith('urn:uuid:')).to.be.true;
@@ -83,6 +86,8 @@ describe('web ledger client', () => {
                '/query/?id=' + encodeURIComponent(TEST_DID))
           .reply(200, TEST_DID_RESULT);
 
+        _nockLedgerAgentStatus();
+
         const result = await client.getRecord({id: TEST_DID});
         expect(result.record.id).to.equal(TEST_DID);
         expect(result.meta.sequence).to.equal(0);
@@ -96,6 +101,8 @@ describe('web ledger client', () => {
           .post('/ledger-agents/72fdcd6a-5861-4307-ba3d-cbb72509533c' +
                '/query/?id=' + encodeURIComponent(TEST_DID))
           .reply(404);
+
+        _nockLedgerAgentStatus();
 
         let error;
         let result;
@@ -118,6 +125,8 @@ describe('web ledger client', () => {
           .post('/ledger-agents/72fdcd6a-5861-4307-ba3d-cbb72509533c' +
                '/query/?id=' + encodeURIComponent(TEST_DID))
           .reply(400, reply);
+
+        _nockLedgerAgentStatus();
 
         let error;
         let result;
@@ -144,6 +153,9 @@ describe('web ledger client', () => {
         nock(ledgerOperationService)
           .post('/')
           .reply(201);
+
+        _nockLedgerAgentStatus();
+
         const record = {id: 'https://example.com/foo'};
         const operation = await client.wrap({record});
         let error;
@@ -160,6 +172,9 @@ describe('web ledger client', () => {
         nock('https://genesis.testnet.veres.one')
           .get(`/ledger-agents`)
           .reply(200, LEDGER_AGENTS_DOC);
+
+        _nockLedgerAgentStatus();
+
         const {ledgerAgent: [{service: {ledgerOperationService}}]} =
           LEDGER_AGENTS_DOC;
         nock(ledgerOperationService)
@@ -183,6 +198,9 @@ describe('web ledger client', () => {
         nock('https://genesis.testnet.veres.one')
           .get(`/ledger-agents`)
           .reply(200, LEDGER_AGENTS_DOC);
+
+        _nockLedgerAgentStatus();
+
         const {ledgerAgent: [{service: {ledgerOperationService}}]} =
           LEDGER_AGENTS_DOC;
         const reply = {helpful: 'information'};
@@ -211,6 +229,7 @@ describe('web ledger client', () => {
         nock('https://genesis.testnet.veres.one')
           .get(`/ledger-agents`)
           .reply(200, LEDGER_AGENTS_DOC);
+        _nockLedgerAgentStatus();
       });
       const record = {id: 'https://example.com/foo'};
       it('wraps a record into a create operation by default', async () => {
@@ -220,6 +239,7 @@ describe('web ledger client', () => {
         result['@context'].should.equal(constants.WEB_LEDGER_CONTEXT_V1_URL);
         result.record.should.eql(record);
         result.type.should.equal('CreateWebLedgerRecord');
+        result.creator.should.equal(LEDGER_AGENT_STATUS.targetNode);
       });
       it('wraps a record into a create operation explicitly', async () => {
         const result = await client.wrap({record, operationType: 'create'});
@@ -228,6 +248,7 @@ describe('web ledger client', () => {
         result['@context'].should.equal(constants.WEB_LEDGER_CONTEXT_V1_URL);
         result.record.should.eql(record);
         result.type.should.equal('CreateWebLedgerRecord');
+        result.creator.should.equal(LEDGER_AGENT_STATUS.targetNode);
       });
       it('wraps a record into an update operation', async () => {
         const result = await client.wrap({record, operationType: 'update'});
@@ -237,6 +258,7 @@ describe('web ledger client', () => {
         expect(result.record).not.to.exist;
         result.recordPatch.should.eql(record);
         result.type.should.equal('UpdateWebLedgerRecord');
+        result.creator.should.equal(LEDGER_AGENT_STATUS.targetNode);
       });
       it('throws on invalid operationType', async () => {
         let error;
@@ -254,3 +276,11 @@ describe('web ledger client', () => {
     }); // end wrap
   });
 });
+
+function _nockLedgerAgentStatus() {
+  const {ledgerAgent: [{service: {ledgerAgentStatusService}}]} =
+    LEDGER_AGENTS_DOC;
+  nock(ledgerAgentStatusService)
+    .get('/')
+    .reply(200, LEDGER_AGENT_STATUS);
+}
