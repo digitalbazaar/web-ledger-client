@@ -37,8 +37,7 @@
   "license": "BSD-3-Clause",
   "main": "lib/index.js",
   "dependencies": {
-    "apisauce": "^1.0.2",
-    "axios": "^0.18.0"
+    "apisauce": "^1.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
