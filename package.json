@@ -65,6 +65,7 @@
     "Ledger"
   ],
   "scripts": {
+    "lint": "eslint lib",
     "mocha": "nyc mocha ./tests/**/*.spec.js ./tests/*.spec.js",
     "test": "npm run mocha",
     "preversion": "npm test",
