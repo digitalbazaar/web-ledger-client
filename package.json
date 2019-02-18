@@ -42,7 +42,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^5.12.1",
-    "eslint-config-digitalbazaar": "^1.0.0",
+    "eslint-config-digitalbazaar": "^1.6.0",
     "mocha": "^5.2.0",
     "nock": "^10.0.2",
     "nyc": "^13.1.0",
@@ -65,7 +65,7 @@
     "Ledger"
   ],
   "scripts": {
-    "lint": "eslint lib",
+    "lint": "eslint lib tests",
     "mocha": "nyc mocha ./tests/**/*.spec.js ./tests/*.spec.js",
     "test": "npm run mocha",
     "preversion": "npm test",
