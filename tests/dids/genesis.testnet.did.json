@@ -1,8 +1,8 @@
 {
   "record": {
     "@context": [
-        "https://w3id.org/did/v0.11",
-        "https://w3id.org/veres-one/v1"
+      "https://w3id.org/did/v0.11",
+      "https://w3id.org/veres-one/v1"
     ],
     "id": "did:v1:test:nym:z6MkozMi3FAww3ZaXjtXuf6Q8RPbisfiemthzPXxMtowVMGQ",
     "authentication": [
