@@ -21,7 +21,7 @@ describe('web ledger client', () => {
   let client;
 
   beforeEach(() => {
-    client = new WebLedgerClient({mode: 'test', hostname: TEST_HOSTNAME});
+    client = new WebLedgerClient({hostname: TEST_HOSTNAME});
   });
 
   describe('veres one client', () => {
