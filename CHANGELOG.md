@@ -1,6 +1,6 @@
 # web-ledger-client ChangeLog
 
-## 2.0.0 - TBD
+## 2.0.0 - 2019-02-20
 
 ### Changed
 - **BREAKING**: Many of the 1.0 APIs have been changed or renamed.
