@@ -1,6 +1,6 @@
 {
   "name": "web-ledger-client",
-  "version": "2.0.0",
+  "version": "2.0.1-0",
   "description": "A WebLedger client.",
   "homepage": "http://github.com/digitalbazaar/web-ledger-client",
   "author": {
