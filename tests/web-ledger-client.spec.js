@@ -5,11 +5,11 @@
 
 const nock = require('nock');
 const chai = require('chai');
-chai.should();
+const should = chai.should();
 
 const {expect} = chai;
 
-const {constants, WebLedgerClient} = require('..');
+const {constants, WebLedgerClient, WebLedgerClientError} = require('..');
 
 const TEST_HOSTNAME = 'genesis.testnet.veres.one';
 const TEST_DID_RESULT = require('./dids/genesis.testnet.did.json');
@@ -74,6 +74,38 @@ describe('web ledger client', () => {
         error.details.status.should.equal(400);
       });
     }); // end getAgent
+
+    describe('getServiceEndpoint', () => {
+      beforeEach(() => {
+        nock('https://genesis.testnet.veres.one')
+          .get(`/ledger-agents`)
+          .reply(200, LEDGER_AGENTS_DOC);
+        _nockLedgerAgentStatus();
+      });
+      it('returns a service endpoint', async () => {
+        const result = await client.getServiceEndpoint(
+          {serviceId: 'ledgerOperationService'});
+        should.exist(result);
+        result.should.be.a('string');
+        result.should.equal(LEDGER_AGENT_STATUS.service.ledgerOperationService);
+      });
+      it('throws NotFoundError for an unknown service ID', async () => {
+        let error;
+        let result;
+        try {
+          result = await client.getServiceEndpoint(
+            {serviceId: 'unknownService'});
+        } catch(e) {
+          error = e;
+        }
+        should.exist(error);
+        should.not.exist(result);
+        error.should.be.instanceof(WebLedgerClientError);
+        error.name.should.equal('NotFoundError');
+        should.exist(error.details.serviceId);
+        should.exist(error.details.ledgerAgent);
+      });
+    }); // end getServiceEndpoint
 
     describe('getRecord', () => {
       it('should fetch a did doc from ledger via https', async () => {
