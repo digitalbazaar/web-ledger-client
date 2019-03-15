@@ -107,6 +107,36 @@ describe('web ledger client', () => {
       });
     }); // end getServiceEndpoint
 
+    describe('getTargetNode', () => {
+      beforeEach(() => {
+        nock('https://genesis.testnet.veres.one')
+          .get(`/ledger-agents`)
+          .reply(200, LEDGER_AGENTS_DOC);
+      });
+      it('returns the `targetNode` for a ledger agent', async () => {
+        _nockLedgerAgentStatus();
+        const result = await client.getTargetNode();
+        should.exist(result);
+        result.should.be.a('string');
+        result.should.equal(LEDGER_AGENT_STATUS.targetNode);
+      });
+      it('throws NotFoundError if `targetNode` is not defined', async () => {
+        _nockLedgerAgentStatus({removeTargetNode: true});
+        let error;
+        let result;
+        try {
+          result = await client.getTargetNode();
+        } catch(e) {
+          error = e;
+        }
+        should.exist(error);
+        should.not.exist(result);
+        error.should.be.instanceof(WebLedgerClientError);
+        error.name.should.equal('NotFoundError');
+        should.exist(error.details.ledgerAgentStatus);
+      });
+    }); // end getTargetNode
+
     describe('getRecord', () => {
       it('should fetch a did doc from ledger via https', async () => {
         nock('https://genesis.testnet.veres.one')
@@ -309,10 +339,14 @@ describe('web ledger client', () => {
   });
 });
 
-function _nockLedgerAgentStatus() {
+function _nockLedgerAgentStatus({removeTargetNode = false} = {}) {
   const {ledgerAgent: [{service: {ledgerAgentStatusService}}]} =
     LEDGER_AGENTS_DOC;
+  const ledgerAgentStatus = JSON.parse(JSON.stringify(LEDGER_AGENT_STATUS));
+  if(removeTargetNode) {
+    delete ledgerAgentStatus.targetNode;
+  }
   nock(ledgerAgentStatusService)
     .get('/')
-    .reply(200, LEDGER_AGENT_STATUS);
+    .reply(200, ledgerAgentStatus);
 }
