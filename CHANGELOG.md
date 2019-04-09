@@ -1,6 +1,6 @@
 # web-ledger-client ChangeLog
 
-## 2.1.0 - TBD
+## 2.1.0 - 2019-04-09
 
 ### Added
 - Add `getServiceEndpoint` API.
