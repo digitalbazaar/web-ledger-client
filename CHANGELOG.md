@@ -1,5 +1,18 @@
 # web-ledger-client ChangeLog
 
+## 3.0.0 - 2019-04-10
+
+### Fixed
+- Now works in the browser.
+
+### Changed
+- **BREAKING**: Node 10.x is required.
+- **BREAKING**: The `strictSSL` parameter has been removed from the constructor.
+  In order to disable strict SSL in Node, one must use the `httpsAgent`
+  parameter to the constructor to pass in a properly configured Node
+  [https.Agent](https://nodejs.org/docs/latest-v10.x/api/https.html#https_class_https_agent)
+  instance. Example: `const httpsAgent = new https.Agent({rejectUnauthorized: false});`
+
 ## 2.1.0 - 2019-04-09
 
 ### Added
