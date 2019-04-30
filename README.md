@@ -10,6 +10,7 @@ Works in Node.js and the browser.
 
 - [Background](#background)
 - [Install](#install)
+- [API Documentation](#api-documentation)
 - [Contribute](#contribute)
 - [Commercial Support](#commercial-support)
 - [License](#license)
@@ -28,6 +29,10 @@ To install via NPM:
 ```
 npm install web-ledger-client
 ```
+
+## API Documentation
+
+See the [API Documentation](./docs/api.md).
 
 ## Contribute
 
