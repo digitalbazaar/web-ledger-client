@@ -45,6 +45,7 @@
     "eslint": "^5.12.1",
     "eslint-config-digitalbazaar": "^2.0.0",
     "eslint-plugin-jsdoc": "^4.6.0",
+    "jsdoc-to-markdown": "^4.0.1",
     "mocha": "^5.2.0",
     "nock": "^10.0.2",
     "nyc": "^13.1.0",
@@ -67,6 +68,7 @@
     "Ledger"
   ],
   "scripts": {
+    "generate-docs": "jsdoc2md lib/*.js > ./docs/api.md",    
     "lint": "eslint lib tests",
     "mocha": "nyc mocha ./tests/**/*.spec.js ./tests/*.spec.js",
     "test": "npm run mocha",
