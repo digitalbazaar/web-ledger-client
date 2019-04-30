@@ -2,7 +2,7 @@
   "name": "web-ledger-client",
   "version": "3.0.1-0",
   "description": "A WebLedger client.",
-  "homepage": "http://github.com/digitalbazaar/web-ledger-client",
+  "homepage": "https://github.com/digitalbazaar/web-ledger-client",
   "author": {
     "name": "Digital Bazaar, Inc.",
     "email": "support@digitalbazaar.com",
@@ -28,7 +28,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/digitalbazaar/web-ledger-client"
+    "url": "https://github.com/digitalbazaar/web-ledger-client"
   },
   "bugs": {
     "url": "https://github.com/digitalbazaar/web-ledger-client/issues",
