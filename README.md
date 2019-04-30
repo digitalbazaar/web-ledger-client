@@ -3,43 +3,31 @@
 [![NPM Version](https://img.shields.io/npm/v/web-ledger-client.svg?style=flat-square)](https://npm.im/web-ledger-client)
 [![Build Status](https://travis-ci.org/digitalbazaar/web-ledger-client.png?branch=master)](https://travis-ci.org/digitalbazaar/web-ledger-client)
 
-> A [DID](https://w3c-ccg.github.io/did-spec/) (Decentralized Identifier) resolution library for Javascript
+A JavaScript HTTP client library for communicating with Web Ledger nodes.
+Works in Node.js and the browser.
 
 ## Table of Contents
 
-- [Security](#security)
 - [Background](#background)
 - [Install](#install)
-- [Usage](#usage)
 - [Contribute](#contribute)
 - [Commercial Support](#commercial-support)
 - [License](#license)
 
-## Security
-
-TBD
-
 ## Background
 
-TBD
-
-See also (related specs):
-
+See related specs:
 * [Web Ledger Protocol](https://w3c.github.io/web-ledger/)
-* [Decentralized Identifiers (DIDs) - Data Model and Syntaxes](https://w3c-ccg.github.io/did-spec/)
-* [Decentralized Identifier Resolution](https://w3c-ccg.github.io/did-resolution/)
 
 ## Install
 
-Requires Node.js 8.3+
+Requires Node.js 10+
 
 To install via NPM:
 
 ```
 npm install web-ledger-client
 ```
-
-## Usage
 
 ## Contribute
 
