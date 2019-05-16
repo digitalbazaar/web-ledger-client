@@ -26,7 +26,7 @@
     * [.getRecord(options)](#WebLedgerClient+getRecord) ⇒ <code>Promise.&lt;Object&gt;</code>
     * [.getDocument(options)](#WebLedgerClient+getDocument) ⇒ <code>Promise.&lt;Object&gt;</code>
     * [.getGenesisBlock()](#WebLedgerClient+getGenesisBlock) ⇒ <code>Promise.&lt;Object&gt;</code>
-    * [.getServiceEndpoint(options)](#WebLedgerClient+getServiceEndpoint) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getServiceEndpoint(options)](#WebLedgerClient+getServiceEndpoint) ⇒ <code>Promise.&lt;string&gt;</code>
     * [.getStatus([options])](#WebLedgerClient+getStatus) ⇒ <code>Promise.&lt;Object&gt;</code>
     * [.getTargetNode()](#WebLedgerClient+getTargetNode) ⇒ <code>Promise.&lt;string&gt;</code>
     * [.sendConfig(options)](#WebLedgerClient+sendConfig) ⇒ <code>Promise.&lt;Object&gt;</code>
@@ -83,11 +83,11 @@ Get the genesis block from the ledger via the 'ledgerBlockService'.
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The genesis block.  
 <a name="WebLedgerClient+getServiceEndpoint"></a>
 
-### webLedgerClient.getServiceEndpoint(options) ⇒ <code>Promise.&lt;Object&gt;</code>
-Get the service endpoint URL for a given service ID.
+### webLedgerClient.getServiceEndpoint(options) ⇒ <code>Promise.&lt;string&gt;</code>
+Get the service endpoint URL for the given service ID.
 
 **Kind**: instance method of [<code>WebLedgerClient</code>](#WebLedgerClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - The service endpoint URL.  
+**Returns**: <code>Promise.&lt;string&gt;</code> - The service endpoint URL.  
 
 | Param | Type | Description |
 | --- | --- | --- |
