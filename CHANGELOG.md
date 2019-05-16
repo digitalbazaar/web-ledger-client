@@ -1,5 +1,10 @@
 # web-ledger-client ChangeLog
 
+## 3.1.0 - 2019-05-16
+
+### Added
+-  Implement getGenesisBlock API.
+
 ## 3.0.0 - 2019-04-10
 
 ### Fixed
