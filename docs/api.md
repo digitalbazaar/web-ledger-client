@@ -9,7 +9,7 @@
 
 <dl>
 <dt><a href="#Agent">Agent</a> : <code>Object</code></dt>
-<dd><p>An SSL capable http Agent.</p>
+<dd><p>A SSL capable HTTP Agent.</p>
 </dd>
 <dt><a href="#JSON-LD">JSON-LD</a> : <code>Object</code></dt>
 <dd><p>A Document used by the Ledger.</p>
@@ -25,6 +25,8 @@
     * [new WebLedgerClient(options)](#new_WebLedgerClient_new)
     * [.getRecord(options)](#WebLedgerClient+getRecord) ⇒ <code>Promise.&lt;Object&gt;</code>
     * [.getDocument(options)](#WebLedgerClient+getDocument) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getGenesisBlock()](#WebLedgerClient+getGenesisBlock) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getServiceEndpoint(options)](#WebLedgerClient+getServiceEndpoint) ⇒ <code>Promise.&lt;Object&gt;</code>
     * [.getStatus([options])](#WebLedgerClient+getStatus) ⇒ <code>Promise.&lt;Object&gt;</code>
     * [.getTargetNode()](#WebLedgerClient+getTargetNode) ⇒ <code>Promise.&lt;string&gt;</code>
     * [.sendConfig(options)](#WebLedgerClient+sendConfig) ⇒ <code>Promise.&lt;Object&gt;</code>
@@ -72,10 +74,30 @@ Gets a document.
 | [options.headers] | <code>Object</code> | <code>{}</code> | Headers for the request. |
 | options.service | <code>string</code> |  | The name of the service to use. |
 
+<a name="WebLedgerClient+getGenesisBlock"></a>
+
+### webLedgerClient.getGenesisBlock() ⇒ <code>Promise.&lt;Object&gt;</code>
+Get the genesis block from the ledger via the 'ledgerBlockService'.
+
+**Kind**: instance method of [<code>WebLedgerClient</code>](#WebLedgerClient)  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - The genesis block.  
+<a name="WebLedgerClient+getServiceEndpoint"></a>
+
+### webLedgerClient.getServiceEndpoint(options) ⇒ <code>Promise.&lt;Object&gt;</code>
+Get the service endpoint URL for a given service ID.
+
+**Kind**: instance method of [<code>WebLedgerClient</code>](#WebLedgerClient)  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - The service endpoint URL.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>Object</code> | The options to use. |
+| options.serviceId | <code>string</code> | The ID for the service of interest. |
+
 <a name="WebLedgerClient+getStatus"></a>
 
 ### webLedgerClient.getStatus([options]) ⇒ <code>Promise.&lt;Object&gt;</code>
-Gets the status of a Document from the ledger Agent Status Service.
+Get the status of a Document from the ledger Agent Status Service.
 
 **Kind**: instance method of [<code>WebLedgerClient</code>](#WebLedgerClient)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - A document with a status.  
@@ -184,7 +206,7 @@ Wraps a Record in a Web Ledger Operation.
 <a name="Agent"></a>
 
 ## Agent : <code>Object</code>
-An SSL capable http Agent.
+A SSL capable HTTP Agent.
 
 **Kind**: global typedef  
 **See**: https://nodejs.org/api/https.html  
