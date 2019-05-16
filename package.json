@@ -1,6 +1,6 @@
 {
   "name": "web-ledger-client",
-  "version": "3.0.1-0",
+  "version": "3.1.0",
   "description": "A WebLedger client.",
   "homepage": "https://github.com/digitalbazaar/web-ledger-client",
   "author": {
@@ -68,7 +68,7 @@
     "Ledger"
   ],
   "scripts": {
-    "generate-docs": "jsdoc2md lib/*.js > ./docs/api.md",    
+    "generate-docs": "jsdoc2md lib/*.js > ./docs/api.md",
     "lint": "eslint lib tests",
     "mocha": "nyc mocha ./tests/**/*.spec.js ./tests/*.spec.js",
     "test": "npm run mocha",
