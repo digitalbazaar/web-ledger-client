@@ -40,12 +40,13 @@
 
 ### new WebLedgerClient(options)
 
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>Object</code> | Options for the WebLedgerClient. |
-| options.hostname | <code>string</code> | The hostname of the ledger node. |
-| [options.logger] | <code>Object</code> | The logger to use. |
-| [options.httpsAgent] | [<code>Agent</code>](#Agent) | - A NodeJS HTTPS Agent (`https.Agent`) instance. |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| options | <code>Object</code> |  | Options for the WebLedgerClient. |
+| options.hostname | <code>string</code> |  | The hostname of the ledger node. |
+| [options.logger] | <code>Object</code> |  | The logger to use. |
+| [options.httpsAgent] | [<code>Agent</code>](#Agent) |  | A NodeJS HTTPS Agent (`https.Agent`)   instance. |
+| [options.timeout] | <code>number</code> | <code>60000</code> | HTTP request timeout in ms. |
 
 <a name="WebLedgerClient+getRecord"></a>
 
