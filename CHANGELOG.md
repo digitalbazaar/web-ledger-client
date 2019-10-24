@@ -1,9 +1,15 @@
 # web-ledger-client ChangeLog
 
+## 3.3.0 - 2019-10-24
+
+### Changed
+- Use eslint@6.
+- Update engines in package file to support Node.js 10+.
+
 ## 3.2.0 - 2019-05-24
 
 ### Added
-- A configurable HTTP request timeout. 
+- A configurable HTTP request timeout.
 
 ## 3.1.0 - 2019-05-16
 
