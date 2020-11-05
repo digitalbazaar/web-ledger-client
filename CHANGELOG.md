@@ -2,7 +2,7 @@
 
 ## 3.3.1 -
 
-### Added
+### Fixed
 - Added a check to ensure `Error.captureStackTrace` is a function before using it.
 
 ## 3.3.0 - 2019-10-24
