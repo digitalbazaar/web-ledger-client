@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^6.0.0",
+    "eslint": "^7.17.0",
     "eslint-config-digitalbazaar": "^2.0.0",
     "eslint-plugin-jsdoc": "^4.6.0",
     "jsdoc-to-markdown": "^4.0.1",
@@ -69,7 +69,7 @@
   ],
   "scripts": {
     "generate-docs": "jsdoc2md lib/*.js > ./docs/api.md",
-    "lint": "eslint lib tests",
+    "lint": "eslint .",
     "mocha": "nyc mocha ./tests/**/*.spec.js ./tests/*.spec.js",
     "test": "npm run mocha",
     "preversion": "npm test",
