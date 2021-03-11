@@ -1,6 +1,10 @@
 # web-ledger-client ChangeLog
 
-## 3.3.1 -
+## 3.4.0 - 2021-03-11
+
+### Changed
+- Use `apisauce@2` to address security vulnerabilities in the older `axios`
+  sub-dependency.
 
 ### Fixed
 - Added a check to ensure `Error.captureStackTrace` is a function before using it.
