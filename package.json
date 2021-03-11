@@ -37,7 +37,7 @@
   "license": "BSD-3-Clause",
   "main": "lib/index.js",
   "dependencies": {
-    "apisauce": "^1.0.2",
+    "apisauce": "^2.0.1",
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {
