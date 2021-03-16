@@ -1,5 +1,10 @@
 # web-ledger-client ChangeLog
 
+## 3.4.1 - 2021-03-16
+
+### Fixed
+- Re-release v3.4.0 due to NPM failure.
+
 ## 3.4.0 - 2021-03-11
 
 ### Changed
