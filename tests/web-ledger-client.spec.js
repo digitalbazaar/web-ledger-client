@@ -17,6 +17,10 @@ const TEST_DID = TEST_DID_RESULT.record.id;
 const LEDGER_AGENTS_DOC = require('./dids/ledger-agents.json');
 const LEDGER_AGENT_STATUS = require('./dids/ledger-agent-status.json');
 
+const jsonldHeaders = {
+  'content-type': 'application/ld+json, application/json'
+};
+
 describe('web ledger client', () => {
   let client;
 
@@ -146,7 +150,7 @@ describe('web ledger client', () => {
         nock('https://genesis.testnet.veres.one')
           .post('/ledger-agents/72fdcd6a-5861-4307-ba3d-cbb72509533c' +
                '/query/?id=' + encodeURIComponent(TEST_DID))
-          .reply(200, TEST_DID_RESULT);
+          .reply(200, TEST_DID_RESULT, jsonldHeaders);
 
         _nockLedgerAgentStatus();
 
@@ -348,5 +352,5 @@ function _nockLedgerAgentStatus({removeTargetNode = false} = {}) {
   }
   nock(ledgerAgentStatusService)
     .get('/')
-    .reply(200, ledgerAgentStatus);
+    .reply(200, ledgerAgentStatus, jsonldHeaders);
 }
