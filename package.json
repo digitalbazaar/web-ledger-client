@@ -37,6 +37,7 @@
   "license": "BSD-3-Clause",
   "main": "lib/index.js",
   "dependencies": {
+    "@digitalbazaar/http-client": "^1.1.0",
     "apisauce": "^2.0.1",
     "lodash.get": "^4.4.2"
   },
