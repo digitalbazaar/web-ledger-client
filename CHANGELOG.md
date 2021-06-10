@@ -8,6 +8,7 @@
 ### Changed
 - API `getRecord` does not append a `/` before query string any more.
 - Updated tests for `getRecord` to no longer expect query string after `/`.
+- Network errors are now HTTPErrors and not axios errors.
 
 ## 3.4.1 - 2021-03-16
 
