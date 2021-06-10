@@ -1,17 +1,13 @@
 # web-ledger-client ChangeLog
 
-### 3.4.2 - TBD
+### 4.0.0 - TBD
 
 ### Removed
-- Replaced `apisauce` with `@digitalbazaar/http-client`.
+- **BREAKING**: Replaced `apisauce` with `@digitalbazaar/http-client`.
 
 ### Changed
-- Switched the API `getRecord` from `apisauce` to `@digitalbazaar/httpClient`.
 - API `getRecord` does not append a `/` before query string any more.
 - Updated tests for `getRecord` to no longer expect query string after `/`.
-- Switched the API `getDocument` from `apisauce` to `@digitalbazaar/httpClient`.
-- Switched the API `sendDocument` from `apisauce` to `@digitalbazaar/httpClient`.
-- Switched the API `getAgents` from `apisauce` to `@digitalbazaar/httpClient`.
 
 ## 3.4.1 - 2021-03-16
 
