@@ -217,7 +217,7 @@ describe('web ledger client', () => {
         const {ledgerAgent: [{service: {ledgerOperationService}}]} =
           LEDGER_AGENTS_DOC;
         nock(ledgerOperationService)
-          .post('/')
+          .post('')
           .reply(201);
 
         _nockLedgerAgentStatus();
@@ -244,7 +244,7 @@ describe('web ledger client', () => {
         const {ledgerAgent: [{service: {ledgerOperationService}}]} =
           LEDGER_AGENTS_DOC;
         nock(ledgerOperationService)
-          .post('/')
+          .post('')
           .reply(404);
         const record = {id: 'https://example.com/foo'};
         const operation = await client.wrap({record});
@@ -271,7 +271,7 @@ describe('web ledger client', () => {
           LEDGER_AGENTS_DOC;
         const reply = {helpful: 'information'};
         nock(ledgerOperationService)
-          .post('/')
+          .post('')
           .reply(400, reply);
         const record = {id: 'https://example.com/foo'};
         const operation = await client.wrap({record});
@@ -351,6 +351,6 @@ function _nockLedgerAgentStatus({removeTargetNode = false} = {}) {
     delete ledgerAgentStatus.targetNode;
   }
   nock(ledgerAgentStatusService)
-    .get('/')
+    .get('')
     .reply(200, ledgerAgentStatus, jsonldHeaders);
 }
