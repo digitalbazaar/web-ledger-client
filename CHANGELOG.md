@@ -3,7 +3,7 @@
 ### 3.4.2 - TBD
 
 ### Removed
-- `apisauce` in favor of `@digitalbazaar/http-client` this is part of a move away from axios.
+- Replaced `apisauce` with `@digitalbazaar/http-client`.
 
 ### Changed
 - Switched the API `getRecord` from `apisauce` to `@digitalbazaar/httpClient`.
