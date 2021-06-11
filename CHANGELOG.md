@@ -1,14 +1,15 @@
 # web-ledger-client ChangeLog
 
-### 4.0.0 - TBD
+### 4.0.0 - 2021-06-11
 
 ### Removed
-- **BREAKING**: Replaced `apisauce` with `@digitalbazaar/http-client`.
+- **BREAKING**: Replaced `apisauce` with `@digitalbazaar/http-client`. The
+  errors thrown by `http-client` are not the same as `apisauce`.
+  - Network errors are now HTTPErrors and not axios errors.
 
 ### Changed
 - API `getRecord` does not append a `/` before query string any more.
 - Updated tests for `getRecord` to no longer expect query string after `/`.
-- Network errors are now HTTPErrors and not axios errors.
 
 ## 3.4.1 - 2021-03-16
 
