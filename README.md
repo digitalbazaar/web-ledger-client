@@ -1,7 +1,7 @@
 # Web Ledger Client _(web-ledger-client)_
 
-[![NPM Version](https://img.shields.io/npm/v/web-ledger-client.svg?style=flat-square)](https://npm.im/web-ledger-client)
-[![Build Status](https://travis-ci.org/digitalbazaar/web-ledger-client.png?branch=master)](https://travis-ci.org/digitalbazaar/web-ledger-client)
+[![Build status](https://img.shields.io/github/workflow/status/digitalbazaar/web-ledger-client/Node.js%20CI)](https://github.com/digitalbazaar/web-ledger-client/actions?query=workflow%3A%22Node.js+CI%22)
+[![NPM Version](https://img.shields.io/npm/v/web-ledger-client.svg)](https://npm.im/web-ledger-client)
 
 A JavaScript HTTP client library for communicating with Web Ledger nodes.
 Works in Node.js and the browser.
