@@ -1,5 +1,10 @@
 # web-ledger-client ChangeLog
 
+### 5.0.0 - 2021-07-23
+
+### Changed
+- **BREAKING**: Add ZCAP context to operation invocations.
+
 ### 4.0.0 - 2021-06-11
 
 ### Removed
