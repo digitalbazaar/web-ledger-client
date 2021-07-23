@@ -1,5 +1,10 @@
 # web-ledger-client ChangeLog
 
+### 6.0.1 - 2021-xx-xx
+
+NOTE FOR NEXT RELEASE: 6.0.0 was erroneously released, next available version
+is 6.0.1
+
 ### 5.0.0 - 2021-07-23
 
 ### Changed
