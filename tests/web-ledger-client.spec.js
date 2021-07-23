@@ -302,7 +302,10 @@ describe('web ledger client', () => {
         const result = await client.wrap({record});
         expect(result).to.exist;
         result.should.be.an('object');
-        result['@context'].should.equal(constants.WEB_LEDGER_CONTEXT_V1_URL);
+        result['@context'].should.eql([
+          constants.WEB_LEDGER_CONTEXT_V1_URL,
+          constants.ZCAP_CONTEXT_V1_URL
+        ]);
         result.record.should.eql(record);
         result.type.should.equal('CreateWebLedgerRecord');
         result.creator.should.equal(LEDGER_AGENT_STATUS.targetNode);
@@ -311,7 +314,10 @@ describe('web ledger client', () => {
         const result = await client.wrap({record, operationType: 'create'});
         expect(result).to.exist;
         result.should.be.an('object');
-        result['@context'].should.equal(constants.WEB_LEDGER_CONTEXT_V1_URL);
+        result['@context'].should.eql([
+          constants.WEB_LEDGER_CONTEXT_V1_URL,
+          constants.ZCAP_CONTEXT_V1_URL
+        ]);
         result.record.should.eql(record);
         result.type.should.equal('CreateWebLedgerRecord');
         result.creator.should.equal(LEDGER_AGENT_STATUS.targetNode);
@@ -320,7 +326,10 @@ describe('web ledger client', () => {
         const result = await client.wrap({record, operationType: 'update'});
         expect(result).to.exist;
         result.should.be.an('object');
-        result['@context'].should.equal(constants.WEB_LEDGER_CONTEXT_V1_URL);
+        result['@context'].should.eql([
+          constants.WEB_LEDGER_CONTEXT_V1_URL,
+          constants.ZCAP_CONTEXT_V1_URL
+        ]);
         expect(result.record).not.to.exist;
         result.recordPatch.should.eql(record);
         result.type.should.equal('UpdateWebLedgerRecord');
