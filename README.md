@@ -22,7 +22,7 @@ See related specs:
 
 ## Install
 
-Requires Node.js 10+
+Requires Node.js 14+
 
 To install via NPM:
 

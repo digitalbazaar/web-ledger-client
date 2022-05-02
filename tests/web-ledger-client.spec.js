@@ -1,15 +1,18 @@
 /*!
- * Copyright (c) 2018-2021 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2018-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const nock = require('nock');
-const chai = require('chai');
+import nock from 'nock';
+import chai from 'chai';
 const should = chai.should();
 
 const {expect} = chai;
 
-const {constants, WebLedgerClient, WebLedgerClientError} = require('..');
+import {
+  constants, WebLedgerClient, WebLedgerClientError
+} from '../lib/index.js';
+
+import {createRequire} from 'module';
+const require = createRequire(import.meta.url);
 
 const TEST_HOSTNAME = 'genesis.testnet.veres.one';
 const TEST_DID_RESULT = require('./dids/genesis.testnet.did.json');
