@@ -1,16 +1,24 @@
 # web-ledger-client ChangeLog
 
-### 6.0.1 - 2021-xx-xx
+## 7.0.0 - 2022-xx-xx
 
-NOTE FOR NEXT RELEASE: 6.0.0 was erroneously released, next available version
-is 6.0.1
+### Changed
+- **BREAKING**: Convert to module (ESM).
+- **BREAKING**: Require Node.js >=14.
+- Update dependencies.
+- Lint module.
 
-### 5.0.0 - 2021-07-23
+## 6.0.0 - NONE
+
+### Notes
+- 6.0.0 was erroneously released, next available version is 6.0.1.
+
+## 5.0.0 - 2021-07-23
 
 ### Changed
 - **BREAKING**: Add ZCAP context to operation invocations.
 
-### 4.0.0 - 2021-06-11
+## 4.0.0 - 2021-06-11
 
 ### Removed
 - **BREAKING**: Replaced `apisauce` with `@digitalbazaar/http-client`. The
