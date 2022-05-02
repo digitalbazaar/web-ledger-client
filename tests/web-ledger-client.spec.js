@@ -12,13 +12,13 @@ import {
 } from '../lib/index.js';
 
 import {createRequire} from 'module';
-const require = createRequire(import.meta.url);
+const requireJson = createRequire(import.meta.url);
 
 const TEST_HOSTNAME = 'genesis.testnet.veres.one';
-const TEST_DID_RESULT = require('./dids/genesis.testnet.did.json');
+const TEST_DID_RESULT = requireJson('./dids/genesis.testnet.did.json');
 const TEST_DID = TEST_DID_RESULT.record.id;
-const LEDGER_AGENTS_DOC = require('./dids/ledger-agents.json');
-const LEDGER_AGENT_STATUS = require('./dids/ledger-agent-status.json');
+const LEDGER_AGENTS_DOC = requireJson('./dids/ledger-agents.json');
+const LEDGER_AGENT_STATUS = requireJson('./dids/ledger-agent-status.json');
 
 const jsonldHeaders = {
   'content-type': 'application/ld+json, application/json'
