@@ -22,7 +22,7 @@ See related specs:
 
 ## Install
 
-Requires Node.js 14+
+- Browsers and Node.js 14+ are supported.
 
 To install via NPM:
 
