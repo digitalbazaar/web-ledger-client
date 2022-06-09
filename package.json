@@ -74,7 +74,7 @@
   ],
   "scripts": {
     "generate-docs": "jsdoc2md lib/*.js > ./docs/api.md",
-    "test": "npm run lint && npm run test-node",
+    "test": "npm run test-node",
     "test-node": "cross-env NODE_ENV=test mocha --preserve-symlinks -t 10000 tests/*.spec.js",
     "coverage": "cross-env NODE_ENV=test c8 npm run test-node",
     "coverage-ci": "cross-env NODE_ENV=test c8 --reporter=lcovonly --reporter=text-summary --reporter=text npm run test-node",
