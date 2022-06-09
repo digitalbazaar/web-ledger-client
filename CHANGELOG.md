@@ -11,7 +11,7 @@
 ## 6.0.0 - NONE
 
 ### Notes
-- 6.0.0 was erroneously released, next available version is 6.0.1.
+- 6.0.0 was erroneously released.
 
 ## 5.0.0 - 2021-07-23
 
