@@ -11,7 +11,7 @@ import {
   constants, WebLedgerClient, WebLedgerClientError
 } from '../lib/index.js';
 
-import {createRequire} from 'module';
+import {createRequire} from 'node:module';
 const requireJson = createRequire(import.meta.url);
 
 const TEST_HOSTNAME = 'genesis.testnet.veres.one';
