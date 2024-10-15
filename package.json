@@ -41,17 +41,17 @@
     "lib/**/*.js"
   ],
   "dependencies": {
-    "@digitalbazaar/http-client": "^3.2.0"
+    "@digitalbazaar/http-client": "^4.1.1"
   },
   "devDependencies": {
     "c8": "^7.11.3",
     "chai": "^4.3.6",
     "cross-env": "^7.0.3",
     "eslint": "^8.17.0",
-    "eslint-config-digitalbazaar": "^3.0.0",
-    "eslint-plugin-jsdoc": "^39.3.2",
-    "eslint-plugin-unicorn": "^42.0.0",
-    "jsdoc-to-markdown": "^7.1.1",
+    "eslint-config-digitalbazaar": "^5.2.0",
+    "eslint-plugin-jsdoc": "^50.4.1",
+    "eslint-plugin-unicorn": "^56.0.0",
+    "jsdoc-to-markdown": "^9.0.2",
     "mocha": "^10.0.0",
     "mocha-lcov-reporter": "^1.3.0",
     "nock": "^13.2.6"
