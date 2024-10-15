@@ -1,8 +1,8 @@
 /*!
- * Copyright (c) 2018-2022 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2018-2024 Digital Bazaar, Inc. All rights reserved.
  */
-import nock from 'nock';
 import chai from 'chai';
+import nock from 'nock';
 const should = chai.should();
 
 const {expect} = chai;
