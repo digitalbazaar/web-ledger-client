@@ -1,6 +1,6 @@
 # web-ledger-client ChangeLog
 
-## 7.1.0 - 2024-10-dd
+## 7.1.0 - 2024-10-15
 
 ### Changed
 - Update dependencies.
